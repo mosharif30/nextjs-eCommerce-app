@@ -13,13 +13,7 @@ function Layout({ children }) {
         <title>فروشگاه اینترنتی نکست</title>
       </Head>
       <Header>{children}</Header>
-      <main
-        css={css`
-          height: 80vh;
-        `}
-      >
-        {children}
-      </main>
+      <main>{children}</main>
       <Footer>{children}</Footer>
     </div>
   )

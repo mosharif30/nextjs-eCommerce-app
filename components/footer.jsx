@@ -4,7 +4,7 @@ import React from 'react'
 import { css } from '@emotion/react'
 
 function Footer() {
-  const primary = '#2980b9'
+  const primary = '#2c3e50'
   return (
     <div>
       <navbar
