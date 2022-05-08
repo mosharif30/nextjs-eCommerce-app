@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import React from 'react'
 
 import Head from 'next/head'
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react'
+// import { css } from '@emotion/react'
 import Header from './Header'
 import Footer from './footer'
 
