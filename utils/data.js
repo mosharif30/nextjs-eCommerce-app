@@ -2,6 +2,7 @@ const data = {
   products: [
     {
       name: 'ابله',
+      slug: 'idiot',
       category: 'رمان',
       image: './images/idiot.jpg',
       price: '219000',
@@ -17,6 +18,7 @@ const data = {
     {
       name: 'ترس و لرز',
       category: 'فلسفه',
+      slug: 'fear-and-trembling',
       image: './images/fear.jpg',
       price: '48000',
       brand: 'نی',

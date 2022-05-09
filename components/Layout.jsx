@@ -3,18 +3,24 @@ import React from 'react'
 
 import Head from 'next/head'
 /** @jsxImportSource @emotion/react */
-// import { css } from '@emotion/react'
+import { css } from '@emotion/react'
 import Header from './Header'
 import Footer from './footer'
 
-function Layout({ children }) {
+function Layout({ children, title }) {
   return (
     <div>
       <Head>
-        <title>فروشگاه اینترنتی نکست</title>
+        <title>{title}</title>
       </Head>
       <Header>{children}</Header>
-      <main>{children}</main>
+      <main
+        css={css`
+          height: 89vh;
+        `}
+      >
+        {children}
+      </main>
       <Footer>{children}</Footer>
     </div>
   )
