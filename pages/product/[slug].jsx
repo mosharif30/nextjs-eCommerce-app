@@ -12,6 +12,8 @@ import data from '../../utils/data'
 export default function Home() {
   const primary = '#2c3e50'
   const secondary = '#f39c12'
+  const success = '#27ae60'
+  const danger = '#c0392b'
   const router = useRouter()
   const { slug } = router.query
   const product = data.products.find((a) => a.slug === slug)
@@ -20,29 +22,41 @@ export default function Home() {
   }
   return (
     <Layout title={product.name}>
-      {' '}
-      <button
-        type="button"
-        css={css`
-          width: 20%;
-          background-color: ${primary};
-          border: 0;
-          color: white;
-          text-align: center;
-          padding: 20px;
-          margin-top: 50px;
-          margin-right: 20px;
-          font-size: 20px;
-          cursor: pointer;
-        `}
-      >
-        <Link href="/"> بازگشت</Link>{' '}
-      </button>
+      <Link href="/">
+        <button
+          type="button"
+          css={css`
+            width: 20%;
+            background-color: ${primary};
+            border: 0;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            margin-right: 20px;
+            font-size: 20px;
+            cursor: pointer;
+            @media (max-width: 600px) {
+              width: 80%;
+              display: flex;
+              justify-content: center;
+              margin-right: auto;
+              margin-left: auto;
+            }
+          `}
+        >
+          بازگشت
+        </button>
+      </Link>{' '}
       <div
         css={css`
           display: flex;
           margin-top: 40px;
           margin-right: 20px;
+          @media (max-width: 600px) {
+            display: flex;
+            flex-direction: row;
+          }
         `}
       >
         <div
@@ -93,10 +107,31 @@ export default function Home() {
             >
               قیمت : {product.price} تومان
             </h3>
+            {product.countInStock === 0 ? (
+              <div
+                css={css`
+                  text-align: center;
+                  color: ${danger};
+                `}
+              >
+                ناموجود
+              </div>
+            ) : (
+              <div
+                css={css`
+                  text-align: center;
+                  color: ${success};
+                `}
+              >
+                موجود
+              </div>
+            )}
             <button
+              disabled
               type="button"
               css={css`
                 background-color: ${secondary};
+
                 width: 100%;
                 border: 0;
                 color: white;

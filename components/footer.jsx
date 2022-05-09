@@ -15,6 +15,9 @@ function Footer() {
           width: 100%;
           padding: 2%;
           justify-content: center;
+          @media (max-width: 430px) {
+            font-size: 18px;
+          }
         `}
       >
         <span

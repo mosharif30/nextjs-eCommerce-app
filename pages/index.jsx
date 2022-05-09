@@ -10,7 +10,7 @@ import data from '../utils/data'
 export default function Home() {
   const primary = '#2c3e50'
   return (
-    <Layout>
+    <Layout title="فروشگاه کتاب">
       <div>
         <h1
           css={css`
@@ -20,9 +20,18 @@ export default function Home() {
           محصولات
         </h1>
         <div
+          className="parent"
           css={css`
             display: flex;
             margin-right: 3%;
+            @media (max-width: 1740px) {
+              flex-wrap: wrap;
+              justify-content: center;
+            }
+            @media (max-width: 706px) {
+              flex-direction: column;
+              align-items: center;
+            }
           `}
         >
           {data.products.map((product) => (
@@ -30,6 +39,9 @@ export default function Home() {
               <a
                 css={css`
                   margin-right: 2%;
+                  @media (max-width: 706px) {
+                    margin-top: 3%;
+                  }
                 `}
                 href={`/product/${product.slug}`}
               >

@@ -15,6 +15,13 @@ function Header() {
           width: 100%;
           padding: 2%;
           overflow: hidden;
+          @media (max-width: 1082px) {
+            font-size: 20px;
+          }
+          @media (max-width: 706px) {
+            flex-direction: column;
+            align-items: center;
+          }
         `}
       >
         <span
@@ -22,7 +29,7 @@ function Header() {
             color: white;
           `}
         >
-          فروشگاه اینترنتی نکست جی اس
+          فروشگاه اینترنتی نکست
         </span>
         <ul
           css={css`
@@ -31,6 +38,12 @@ function Header() {
             color: white;
             margin: 0;
             width: 50%;
+            @media (max-width: 706px) {
+              flex-direction: column;
+              margin-top: 5%;
+              align-items: center;
+              padding-right: 0;
+            }
           `}
         >
           <li
@@ -64,12 +77,25 @@ function Header() {
             margin-top: 0;
             margin-bottom: 0;
             width: 20%;
+            @media (max-width: 1082px) {
+              font-size: 20px;
+              padding: 2px;
+            }
+            @media (max-width: 706px) {
+              flex-direction: row;
+              justify-content: space-between;
+              width: 100%;
+            }
           `}
         >
           <li
             css={css`
               padding-right: 5%;
               margin-right: auto;
+              @media (max-width: 706px) {
+                margin-right: 0;
+                padding-right: 0;
+              }
             `}
           >
             <Link href="/">سبد خرید</Link>

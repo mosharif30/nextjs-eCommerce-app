@@ -16,7 +16,8 @@ function Layout({ children, title }) {
       <Header>{children}</Header>
       <main
         css={css`
-          height: 89vh;
+          height: auto;
+          margin-bottom: 5%;
         `}
       >
         {children}
