@@ -51,25 +51,34 @@ export default function Home() {
       <div
         css={css`
           display: flex;
+          flex-direction: row;
           margin-top: 40px;
           margin-right: 20px;
-          @media (max-width: 600px) {
+
+          @media (max-width: 750px) {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
+            margin-right: 0;
           }
         `}
       >
         <div
           css={css`
             width: 20%;
+            @media (max-width: 750px) {
+              width: 80%;
+              display: flex;
+              margin-right: auto;
+              margin-left: auto;
+            }
           `}
         >
           {' '}
           <Image
             src={`/${product.image}`}
             alt={product.name}
-            width={350}
-            height={500}
+            width={500}
+            height={700}
           />
         </div>
 
@@ -77,6 +86,9 @@ export default function Home() {
           css={css`
             padding: 2px 16px;
             width: 60%;
+            @media (max-width: 710px) {
+              width: 100%;
+            }
           `}
         >
           {' '}
@@ -90,6 +102,9 @@ export default function Home() {
         <div
           css={css`
             width: 20%;
+            @media (max-width: 750px) {
+              width: 100%;
+            }
           `}
         >
           <div
@@ -98,6 +113,9 @@ export default function Home() {
               transition: 0.3s;
               width: 80%;
               box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+              @media (max-width: 750px) {
+                width: 100%;
+              }
             `}
           >
             <h3
