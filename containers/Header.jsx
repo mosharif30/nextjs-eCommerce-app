@@ -1,16 +1,17 @@
 import React from 'react'
 import Link from 'next/link'
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react'
+import { css, useTheme } from '@emotion/react'
 
 function Header() {
-  const primary = '#2c3e50'
+  const theme = useTheme()
+
   return (
     <div>
       <navbar
         css={css`
           display: flex;
-          background-color: ${primary};
+          background-color: ${theme.colors.primary};
           font-size: 24px;
           width: 100%;
           padding: 2%;
@@ -106,7 +107,7 @@ function Header() {
               margin-right: auto;
             `}
           >
-            <Link href="/">ورود</Link>
+            <Link href="/login">ورود</Link>
           </li>
         </ul>
       </navbar>

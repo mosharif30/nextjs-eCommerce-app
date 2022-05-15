@@ -6,8 +6,9 @@ import Link from 'next/link'
 import { css } from '@emotion/react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
-import Layout from '../../components/Layout'
+import Layout from '../../containers/Layout'
 import data from '../../utils/data'
+import { Button, H1, H3 } from '../../components'
 
 export default function Home() {
   const primary = '#2c3e50'
@@ -22,32 +23,9 @@ export default function Home() {
   }
   return (
     <Layout title={product.name}>
-      <Link href="/">
-        <button
-          type="button"
-          css={css`
-            width: 20%;
-            background-color: ${primary};
-            border: 0;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 50px;
-            margin-right: 20px;
-            font-size: 20px;
-            cursor: pointer;
-            @media (max-width: 600px) {
-              width: 80%;
-              display: flex;
-              justify-content: center;
-              margin-right: auto;
-              margin-left: auto;
-            }
-          `}
-        >
-          بازگشت
-        </button>
-      </Link>{' '}
+      <Button>
+        <Link href="/">salam</Link>
+      </Button>
       <div
         css={css`
           display: flex;
@@ -92,12 +70,12 @@ export default function Home() {
           `}
         >
           {' '}
-          <h1>{product.name}</h1>
-          <h3>نویسنده:{product.author}</h3>
-          <h3>مترجم:{product.translate}</h3>
-          <h3>دسته بندی:{product.category}</h3>
-          <h3>انتشارات:{product.brand}</h3>
-          <h3>توضیحات : {product.description}</h3>
+          <H1>{product.name}</H1>
+          <H3>نویسنده:{product.author}</H3>
+          <H3>مترجم:{product.translate}</H3>
+          <H3>دسته بندی:{product.category}</H3>
+          <H3>انتشارات:{product.brand}</H3>
+          <H3>توضیحات : {product.description}</H3>
         </div>
         <div
           css={css`
@@ -118,13 +96,7 @@ export default function Home() {
               }
             `}
           >
-            <h3
-              css={css`
-                text-align: center;
-              `}
-            >
-              قیمت : {product.price} تومان
-            </h3>
+            <H3>قیمت : {product.price} تومان</H3>
             {product.countInStock === 0 ? (
               <div
                 css={css`
@@ -144,23 +116,9 @@ export default function Home() {
                 موجود
               </div>
             )}
-            <button
-              disabled
-              type="button"
-              css={css`
-                background-color: ${secondary};
-
-                width: 100%;
-                border: 0;
-                color: white;
-                text-align: center;
-                padding: 50px;
-                font-size: 20px;
-                cursor: pointer;
-              `}
-            >
+            <Button disabled type="button">
               اضافه به سبد خرید
-            </button>
+            </Button>
           </div>
         </div>
       </div>

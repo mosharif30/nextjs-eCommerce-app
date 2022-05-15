@@ -1,16 +1,17 @@
 import React from 'react'
 
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react'
+import { css, useTheme } from '@emotion/react'
 
 function Footer() {
-  const primary = '#2c3e50'
+  const theme = useTheme()
+
   return (
     <div>
       <navbar
         css={css`
           display: flex;
-          background-color: ${primary};
+          background-color: ${theme.colors.primary};
           font-size: 24px;
           width: 100%;
           padding: 2%;

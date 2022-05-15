@@ -3,7 +3,8 @@ import React from 'react'
 // this comment tells babel to convert jsx to calls to a function called jsx instead of React.createElement
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import Layout from '../../components/Layout'
+import Layout from '../../containers/Layout'
+import { H1 } from '../../components'
 
 export default function About() {
   return (
@@ -18,7 +19,7 @@ export default function About() {
         `}
       >
         {' '}
-        <h1>درباره ما</h1>
+        <H1>درباره ما</H1>
         <p>
           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
           استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در

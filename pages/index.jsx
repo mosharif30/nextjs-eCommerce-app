@@ -2,23 +2,36 @@ import React from 'react'
 
 // this comment tells babel to convert jsx to calls to a function called jsx instead of React.createElement
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react'
+import { css, useTheme } from '@emotion/react'
 import Link from 'next/link'
-import Layout from '../components/Layout'
+import Layout from '../containers/Layout'
 import data from '../utils/data'
+import {
+  Button,
+  InputEmail,
+  InputPassword,
+  H1,
+  Space,
+  H2,
+  H3,
+  H4,
+  H5,
+  Small,
+} from '../components'
 
 export default function Home() {
-  const primary = '#2c3e50'
+  const theme = useTheme()
+
   return (
     <Layout title="فروشگاه کتاب">
       <div>
-        <h1
+        <H1
           css={css`
             margin: 2%;
           `}
         >
           محصولات
-        </h1>
+        </H1>
         <div
           className="parent"
           css={css`
@@ -70,15 +83,15 @@ export default function Home() {
                     `}
                   >
                     {' '}
-                    <h4>
+                    <H4>
                       <b>{product.name}</b>
-                    </h4>
+                    </H4>
                     <p>{product.author}</p>
                   </div>
                   <div
                     css={css`
                       padding: 4%;
-                      background-color: ${primary};
+                      background-color: ${theme.colors.primary};
                       display: flex;
                     `}
                   >
@@ -89,17 +102,9 @@ export default function Home() {
                     >
                       {product.price} تومان
                     </span>
-                    <button
-                      type="button"
-                      css={css`
-                        margin-right: auto;
-                        background-color: ${primary};
-                        border: 0;
-                        color: white;
-                      `}
-                    >
+                    <Button type="button" css={css``}>
                       اضافه به سبد خرید
-                    </button>
+                    </Button>
                   </div>
                 </div>
               </a>
