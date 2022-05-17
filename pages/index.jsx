@@ -102,7 +102,7 @@ export default function Home() {
                       justify-content: center;
                     `}
                   >
-                    <H5>{product.price} تومان</H5>
+                    <H5>{product.price} هزارتومان</H5>
                   </div>
                 </div>
               </a>

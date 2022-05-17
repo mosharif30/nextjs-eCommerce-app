@@ -109,7 +109,13 @@ export default function Home() {
               }
             `}
           >
-            <H3>قیمت : {product.price} تومان</H3>
+            <div
+              css={css`
+                padding: 5% 10%;
+              `}
+            >
+              <H5>قیمت : {product.price} هزارتومان</H5>
+            </div>
             {product.countInStock === 0 ? (
               <div
                 css={css`
