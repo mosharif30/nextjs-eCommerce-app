@@ -5,14 +5,14 @@ import React from 'react'
 import { css } from '@emotion/react'
 import Input from '../Input/Input'
 
-function InputText({ placeholder }) {
+function InputText(props) {
   return (
     <div
       css={css`
         width: 100%;
       `}
     >
-      <Input type="text" placeholder={placeholder} />
+      <Input type="text" {...props} />
     </div>
   )
 }

@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from 'react'
 
 /** @jsxImportSource @emotion/react */
@@ -20,11 +19,11 @@ function LayoutAuth({ children }) {
           css={css`
             width: 300px;
           `}
-          src="logo.png"
+          src="nextl.png"
           alt="logo"
         />
       </div>
-    
+
       <div
         css={css`
           width: 30%;

@@ -1,7 +1,10 @@
 const theme = {
   colors: {
-    primary: '#2980b9',
-    secondary: '#e74c3c',
+    primary: '#ecf0f1',
+    secondary: '#16a085',
+    sec: '#1abc9c',
+    dark: '#34495e',
+    white: '#f5f6fa',
     text: '#2c3e50',
   },
   typography: {
@@ -17,7 +20,7 @@ const theme = {
   border: ['0px', '2px', '4px', '8px', '16px', '32px'],
   borderRadius: ['0px', '2px', '4px', '8px', '16px', '32px'],
   inputColor: {
-    light: '#e0f7fa',
+    light: '#ecf0f1',
   },
   borderColor: {
     light: '#ecf0f1',

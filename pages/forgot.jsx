@@ -21,7 +21,7 @@ import {
 import FormControl from '../containers/FormControl/FormControl'
 import Layout from '../containers/Layout'
 
-export default function Login() {
+export default function forgot() {
   const [formValue, setFormValue] = useState({})
   const handleOnChange = (name, value) => {
     setFormValue({ ...formValue, [name]: value })
@@ -42,7 +42,7 @@ export default function Login() {
       <Layout title="فروشگاه کتاب">
         <LayoutAuth>
           <Space />
-          <H1 align="center">به این پروژه ریکتی خوش آمدید</H1>
+          <H1 align="center">فراموشی رمز عبور</H1>
 
           <Space />
 
@@ -53,14 +53,9 @@ export default function Login() {
                 placeholder="ایمیل"
               />
             </FormControl>
+
             <FormControl>
-              <InputPassword
-                onChange={(value) => handleOnChange('password', value)}
-                placeholder="کلمه عبور"
-              />
-            </FormControl>
-            <FormControl>
-              <Button type="submit">وارد شوید</Button>
+              <Button type="submit">ارسال کد </Button>
             </FormControl>
           </form>
         </LayoutAuth>

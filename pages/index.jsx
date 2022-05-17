@@ -63,15 +63,15 @@ export default function Home() {
                   css={css`
                     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
                     transition: 0.3s;
-                    max-width: 500px;
+                    max-width: 250px;
                     margin-top: 5px;
                     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
                   `}
                 >
                   <img
                     css={css`
-                      max-width: 500px;
-                      max-height: 500px;
+                      max-width: 300px;
+                      max-height: 300px;
                     `}
                     src={product.image}
                     alt=""
@@ -83,28 +83,26 @@ export default function Home() {
                     `}
                   >
                     {' '}
-                    <H4>
-                      <b>{product.name}</b>
-                    </H4>
-                    <p>{product.author}</p>
-                  </div>
-                  <div
-                    css={css`
-                      padding: 4%;
-                      background-color: ${theme.colors.primary};
-                      display: flex;
-                    `}
-                  >
-                    <span
+                    <H5>{product.name}</H5>
+                    <Small
                       css={css`
-                        color: white;
+                        color: ${theme.colors.text};
                       `}
                     >
-                      {product.price} تومان
-                    </span>
-                    <Button type="button" css={css``}>
-                      اضافه به سبد خرید
-                    </Button>
+                      {product.author}
+                    </Small>
+                  </div>
+
+                  <div
+                    css={css`
+                      width: 100%;
+                      padding: 10%;
+                      background-color: ${theme.colors.primary};
+                      display: flex;
+                      justify-content: center;
+                    `}
+                  >
+                    <H5>{product.price} تومان</H5>
                   </div>
                 </div>
               </a>

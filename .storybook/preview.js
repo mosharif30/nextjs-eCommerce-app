@@ -19,12 +19,12 @@ import { css } from '@emotion/react'
 export const decorators = [
   (Story) => (
     <ThemeProvider theme={theme}>
+      <Reset />
       <div
         css={css`
           font-family: 'Vazir';
         `}
       >
-        <Reset />
         <Story />
       </div>
     </ThemeProvider>

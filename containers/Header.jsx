@@ -8,37 +8,46 @@ function Header() {
 
   return (
     <div>
-      <navbar
+      <div
         css={css`
           display: flex;
+          padding: 1%;
           background-color: ${theme.colors.primary};
-          font-size: 24px;
-          width: 100%;
-          padding: 2%;
-          overflow: hidden;
-          @media (max-width: 1082px) {
-            font-size: 20px;
-          }
+
           @media (max-width: 706px) {
             flex-direction: column;
             align-items: center;
           }
         `}
       >
-        <span
+        <div
           css={css`
-            color: white;
+            display: flex;
+
+            color: ${theme.colors.text};
+            width: 25%;
+            align-items: center;
+            justify-content: center;
+            @media (max-width: 706px) {
+              width: 100%;
+              justify-content: center;
+            }
           `}
         >
-          فروشگاه اینترنتی نکست
-        </span>
+          <img
+            css={css`
+              width: 120px;
+            `}
+            src="/nextl.png"
+            alt="logo"
+          />{' '}
+        </div>
         <ul
           css={css`
             display: flex;
             list-style-type: none;
-            color: white;
-            margin: 0;
-            width: 50%;
+            color: ${theme.colors.text};
+            width: 40%;
             @media (max-width: 706px) {
               flex-direction: column;
               margin-top: 5%;
@@ -49,21 +58,38 @@ function Header() {
         >
           <li
             css={css`
-              padding-right: 5%;
+              display: flex;
+
+              align-items: center;
+              justify-content: center;
             `}
           >
             <Link href="/">خانه</Link>
           </li>
           <li
             css={css`
+              display: flex;
+
               padding-right: 5%;
+              align-items: center;
+              justify-content: center;
+              @media (max-width: 706px) {
+                padding-right: 0;
+              }
             `}
           >
             <Link href="/about">درباره ما</Link>
           </li>
           <li
             css={css`
+              display: flex;
+
               padding-right: 5%;
+              align-items: center;
+              justify-content: center;
+              @media (max-width: 706px) {
+                padding-right: 0;
+              }
             `}
           >
             <Link href="/contact">ارتباط با ما</Link>
@@ -72,14 +98,12 @@ function Header() {
         <ul
           css={css`
             display: flex;
+            justify-content: space-between;
             list-style-type: none;
-            color: white;
+            color: ${theme.colors.text};
             margin-right: auto;
-            margin-top: 0;
-            margin-bottom: 0;
-            width: 20%;
+            width: 40%;
             @media (max-width: 1082px) {
-              font-size: 20px;
               padding: 2px;
             }
             @media (max-width: 706px) {
@@ -91,8 +115,12 @@ function Header() {
         >
           <li
             css={css`
+              display: flex;
+
               padding-right: 5%;
+              align-items: center;
               margin-right: auto;
+              margin-left: 5%;
               @media (max-width: 706px) {
                 margin-right: 0;
                 padding-right: 0;
@@ -103,14 +131,32 @@ function Header() {
           </li>
           <li
             css={css`
+              display: flex;
+
               padding-right: 5%;
+              align-items: center;
               margin-right: auto;
+              margin-left: 5%;
             `}
           >
             <Link href="/login">ورود</Link>
           </li>
+          <li
+            css={css`
+              display: flex;
+
+              padding-right: 5%;
+              align-items: center;
+              padding: 5%;
+              border-radius: 5%;
+              background-color: ${theme.colors.secondary};
+              color: white;
+            `}
+          >
+            <Link href="/register">ثبت نام</Link>
+          </li>
         </ul>
-      </navbar>
+      </div>
     </div>
   )
 }

@@ -8,7 +8,7 @@ import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Layout from '../../containers/Layout'
 import data from '../../utils/data'
-import { Button, H1, H3 } from '../../components'
+import { Button, H1, H3, H5, Space } from '../../components'
 
 export default function Home() {
   const primary = '#2c3e50'
@@ -23,18 +23,30 @@ export default function Home() {
   }
   return (
     <Layout title={product.name}>
-      <Button>
-        <Link href="/">salam</Link>
-      </Button>
+      <Space />
+      <Space />
+
+      <div
+        css={css`
+          width: 20%;
+          @media (max-width: 850px) {
+            width: 40%;
+          }
+          @media (max-width: 500px) {
+            width: 100%;
+          }
+        `}
+      >
+        {' '}
+      </div>
+
       <div
         css={css`
           display: flex;
           flex-direction: row;
-          margin-top: 40px;
           margin-right: 20px;
 
           @media (max-width: 750px) {
-            display: flex;
             flex-direction: column;
             margin-right: 0;
           }
@@ -42,9 +54,9 @@ export default function Home() {
       >
         <div
           css={css`
-            width: 20%;
+            width: 30%;
             @media (max-width: 750px) {
-              width: 80%;
+              width: 50%;
               display: flex;
               margin-right: auto;
               margin-left: auto;
@@ -55,8 +67,8 @@ export default function Home() {
           <Image
             src={`/${product.image}`}
             alt={product.name}
-            width={500}
-            height={700}
+            width={250}
+            height={350}
           />
         </div>
 
@@ -69,13 +81,12 @@ export default function Home() {
             }
           `}
         >
-          {' '}
           <H1>{product.name}</H1>
-          <H3>نویسنده:{product.author}</H3>
-          <H3>مترجم:{product.translate}</H3>
-          <H3>دسته بندی:{product.category}</H3>
-          <H3>انتشارات:{product.brand}</H3>
-          <H3>توضیحات : {product.description}</H3>
+          <H5>نویسنده:{product.author}</H5>
+          <H5>مترجم:{product.translate}</H5>
+          <H5>دسته بندی:{product.category}</H5>
+          <H5>انتشارات:{product.brand}</H5>
+          <H5>توضیحات : {product.description}</H5>
         </div>
         <div
           css={css`
@@ -87,12 +98,14 @@ export default function Home() {
         >
           <div
             css={css`
-              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+              box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.2);
               transition: 0.3s;
               width: 80%;
-              box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
               @media (max-width: 750px) {
-                width: 100%;
+                width: 90%;
+                margin-right: auto;
+                margin-left: auto;
+                padding: 2%;
               }
             `}
           >

@@ -161,9 +161,7 @@ function Reset() {
           line-height: 1.75;
           color: #000000;
         }
-        * {
-          font-family: Vazir;
-        }
+        
       `}
     />
   )

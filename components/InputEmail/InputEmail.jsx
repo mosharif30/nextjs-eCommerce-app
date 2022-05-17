@@ -5,7 +5,7 @@ import React from 'react'
 import { css } from '@emotion/react'
 import Input from '../Input/Input'
 
-function InputEmail({ placeholder }) {
+function InputEmail(props) {
   return (
     <div
       css={css`
@@ -13,7 +13,7 @@ function InputEmail({ placeholder }) {
         direction: ltr;
       `}
     >
-      <Input type="email" placeholder={placeholder} />
+      <Input type="email" {...props} />
     </div>
   )
 }

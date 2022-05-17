@@ -1,11 +1,10 @@
-/* eslint-disable react/prop-types */
 import React from 'react'
 
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import Input from '../Input/Input'
 
-function InputPassword({ placeholder }) {
+function InputPassword(props) {
   return (
     <div
       css={css`
@@ -13,7 +12,7 @@ function InputPassword({ placeholder }) {
         direction: ltr;
       `}
     >
-      <Input type="password" placeholder={placeholder} />
+      <Input type="password" {...props} />
     </div>
   )
 }

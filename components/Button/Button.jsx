@@ -1,11 +1,9 @@
-/* eslint-disable react/prop-types */
 import React from 'react'
 
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react'
-import { useTheme } from '@emotion/react'
+import { css, useTheme } from '@emotion/react'
 
-function Button({ type = 'button', children, secondary }) {
+function Button({ type = 'button', children, secondary, sec, textWhite }) {
   const theme = useTheme()
   return (
     <button
@@ -14,8 +12,10 @@ function Button({ type = 'button', children, secondary }) {
         width: 100%;
         background-color: ${secondary
           ? theme.colors.secondary
+          : sec
+          ? theme.colors.sec
           : theme.colors.primary};
-        color: white;
+        color: ${textWhite ? theme.colors.white : theme.colors.text};
         font-size: ${theme.typography.paragraph.fontSize};
         text-decoration: none;
         padding: ${theme.spaces[4]};
@@ -26,6 +26,7 @@ function Button({ type = 'button', children, secondary }) {
         transition-duration: 0.4s;
         &:hover {
           box-shadow: ${theme.boxShadow.light};
+          background-color: ${theme.colors.secondary};
         }
       `}
     >

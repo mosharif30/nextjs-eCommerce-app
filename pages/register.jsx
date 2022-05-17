@@ -1,8 +1,5 @@
 import React, { useState } from 'react'
 
-// this comment tells babel to convert jsx to calls to a function called jsx instead of React.createElement
-// /** @jsxImportSource @emotion/react */
-// import { css } from '@emotion/react'
 import Head from 'next/head'
 import LayoutAuth from '../containers/LayoutAuth/LayoutAuth'
 
@@ -17,11 +14,12 @@ import {
   H4,
   H5,
   Small,
+  InputText,
 } from '../components'
 import FormControl from '../containers/FormControl/FormControl'
 import Layout from '../containers/Layout'
 
-export default function Login() {
+export default function register() {
   const [formValue, setFormValue] = useState({})
   const handleOnChange = (name, value) => {
     setFormValue({ ...formValue, [name]: value })
@@ -42,11 +40,17 @@ export default function Login() {
       <Layout title="فروشگاه کتاب">
         <LayoutAuth>
           <Space />
-          <H1 align="center">به این پروژه ریکتی خوش آمدید</H1>
+          <H1 align="center">ثبت نام </H1>
 
           <Space />
 
           <form onSubmit={handleSubmit}>
+            <FormControl>
+              <InputText
+                onChange={(value) => handleOnChange('myname', value)}
+                placeholder="نام"
+              />
+            </FormControl>
             <FormControl>
               <InputEmail
                 onChange={(value) => handleOnChange('email', value)}
@@ -60,7 +64,7 @@ export default function Login() {
               />
             </FormControl>
             <FormControl>
-              <Button type="submit">وارد شوید</Button>
+              <Button type="submit">ثبت نام </Button>
             </FormControl>
           </form>
         </LayoutAuth>
