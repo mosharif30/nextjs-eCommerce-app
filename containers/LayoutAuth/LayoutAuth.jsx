@@ -26,7 +26,13 @@ function LayoutAuth({ children }) {
 
       <div
         css={css`
-          width: 30%;
+          width: 35%;
+          @media (max-width: 1100px) {
+            width: 60%;
+          }
+          @media (max-width: 700px) {
+            width: 90%;
+          }
         `}
       >
         {children}
