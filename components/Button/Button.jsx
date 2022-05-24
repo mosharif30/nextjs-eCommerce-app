@@ -3,7 +3,14 @@ import React from 'react'
 /** @jsxImportSource @emotion/react */
 import { css, useTheme } from '@emotion/react'
 
-function Button({ type = 'button', children, secondary, sec, textWhite }) {
+function Button({
+  type = 'button',
+  children,
+  secondary,
+  sec,
+  textWhite,
+  loading,
+}) {
   const theme = useTheme()
   return (
     <button
@@ -30,7 +37,8 @@ function Button({ type = 'button', children, secondary, sec, textWhite }) {
         }
       `}
     >
-      {children}
+      {loading && 'صبر کنید'}
+      {!loading && children}
     </button>
   )
 }

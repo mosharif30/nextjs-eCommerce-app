@@ -2,8 +2,10 @@ import React from 'react'
 import Link from 'next/link'
 /** @jsxImportSource @emotion/react */
 import { css, useTheme } from '@emotion/react'
+import { useSelector } from 'react-redux'
 
 function Header() {
+  const auth = useSelector((state) => state.auth)
   const theme = useTheme()
 
   return (
@@ -129,32 +131,54 @@ function Header() {
           >
             <Link href="/">سبد خرید</Link>
           </li>
-          <li
-            css={css`
-              display: flex;
+          {(!auth || !auth.logged) && (
+            <>
+              <li
+                css={css`
+                  display: flex;
 
-              padding-right: 5%;
-              align-items: center;
-              margin-right: auto;
-              margin-left: 5%;
-            `}
-          >
-            <Link href="/login">ورود</Link>
-          </li>
-          <li
-            css={css`
-              display: flex;
+                  padding-right: 5%;
+                  align-items: center;
+                  margin-right: auto;
+                  margin-left: 5%;
+                `}
+              >
+                <Link href="/login">ورود</Link>
+              </li>
+              <li
+                css={css`
+                  display: flex;
 
-              padding-right: 5%;
-              align-items: center;
-              padding: 5%;
-              border-radius: 5%;
-              background-color: ${theme.colors.secondary};
-              color: white;
-            `}
-          >
-            <Link href="/register">ثبت نام</Link>
-          </li>
+                  padding-right: 5%;
+                  align-items: center;
+                  padding: 5%;
+                  border-radius: 5%;
+                  background-color: ${theme.colors.dark};
+                  color: white;
+                `}
+              >
+                <Link href="/register">ثبت نام</Link>
+              </li>
+            </>
+          )}
+          {auth && auth.logged && (
+            <>
+              <li
+                css={css`
+                  display: flex;
+
+                  padding-right: 5%;
+                  align-items: center;
+                  padding: 5%;
+                  border-radius: 5%;
+                  background-color: ${theme.colors.secondary};
+                  color: white;
+                `}
+              >
+                <div> خوش آمدید</div>
+              </li>
+            </>
+          )}
         </ul>
       </div>
     </div>

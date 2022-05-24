@@ -20,17 +20,24 @@ import {
 } from '../components'
 import FormControl from '../containers/FormControl/FormControl'
 import Layout from '../containers/Layout'
+import { useDispatch, useSelector } from 'react-redux'
+import actionTypes from '../configs/actionTypes'
+import { LOGIN_ACTION } from '../actions'
 
 export default function Login() {
+  const dispatch = useDispatch()
   const [formValue, setFormValue] = useState({})
+  const auth = useSelector((state) => state.auth)
+  console.log(auth)
   const handleOnChange = (name, value) => {
     setFormValue({ ...formValue, [name]: value })
   }
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     if (event) {
       event.preventDefault()
     }
     console.log('submit', formValue)
+    dispatch(LOGIN_ACTION())
   }
   return (
     <div>
@@ -60,7 +67,9 @@ export default function Login() {
               />
             </FormControl>
             <FormControl>
-              <Button type="submit">وارد شوید</Button>
+              <Button type="submit" loading={auth.loading}>
+                وارد شوید
+              </Button>
             </FormControl>
           </form>
         </LayoutAuth>
