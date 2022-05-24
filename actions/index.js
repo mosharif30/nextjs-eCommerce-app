@@ -1,33 +1,14 @@
 import actionTypes from '../configs/actionTypes'
+import fetchUrl from '../utils/fetchUrl'
+import reduxCall from '../utils/reduxCall'
 
 const LOGIN_ACTION = () => {
   return async (dispatch) => {
-    dispatch({
-      type: actionTypes.LOGIN_STARTED,
-      loading: true,
-      logged: true,
+    return reduxCall(dispatch, {
+      url: 'http://127.0.0.1:5000/login.json',
+      method: 'GET',
+      name: 'LOGIN',
     })
-    try {
-      setTimeout(async () => {
-        const response = await fetch('http://192.168.1.104:5000/login.json')
-        const { user } = await response.json()
-        dispatch({
-          type: actionTypes.LOGIN_SUCCESS,
-          logged: true,
-          loading: false,
-
-          user,
-        })
-      }, 1000)
-    } catch (e) {
-      dispatch({
-        type: actionTypes.LOGIN_FAILED,
-        logged: false,
-        loading: false,
-
-        error: true,
-      })
-    }
   }
 }
 export { LOGIN_ACTION }
