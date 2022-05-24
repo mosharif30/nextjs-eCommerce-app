@@ -36,7 +36,6 @@ export default function Login() {
     if (event) {
       event.preventDefault()
     }
-    console.log('submit', formValue)
     dispatch(LOGIN_ACTION())
   }
   return (

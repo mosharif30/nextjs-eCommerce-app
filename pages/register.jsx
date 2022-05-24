@@ -18,8 +18,13 @@ import {
 } from '../components'
 import FormControl from '../containers/FormControl/FormControl'
 import Layout from '../containers/Layout'
+import { useDispatch, useSelector } from 'react-redux'
+import { REGISTER_ACTION } from '../actions'
 
 export default function register() {
+  const dispatch = useDispatch()
+  const auth = useSelector((state) => state.auth)
+
   const [formValue, setFormValue] = useState({})
   const handleOnChange = (name, value) => {
     setFormValue({ ...formValue, [name]: value })
@@ -29,6 +34,7 @@ export default function register() {
       event.preventDefault()
     }
     console.log('submit', formValue)
+    dispatch(REGISTER_ACTION())
   }
   return (
     <div>
@@ -64,7 +70,9 @@ export default function register() {
               />
             </FormControl>
             <FormControl>
-              <Button type="submit">ثبت نام </Button>
+              <Button loading={auth.loading} type="submit">
+                ثبت نام{' '}
+              </Button>
             </FormControl>
           </form>
         </LayoutAuth>

@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux'
 
 function Header() {
   const auth = useSelector((state) => state.auth)
+
   const theme = useTheme()
 
   return (
@@ -175,7 +176,7 @@ function Header() {
                   color: white;
                 `}
               >
-                <div> خوش آمدید</div>
+                <div> خوش آمدید </div>
               </li>
             </>
           )}

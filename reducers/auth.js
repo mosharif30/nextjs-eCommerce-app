@@ -18,6 +18,21 @@ const auth = (state = [], action) => {
         ...action,
       }
 
+    case actionTypes.REGISTER_STARTED:
+      return {
+        ...state,
+        ...action,
+      }
+    case actionTypes.REGISTER_SUCCESS:
+      return {
+        ...state,
+        ...action,
+      }
+    case actionTypes.REGISTER_FAILED:
+      return {
+        ...state,
+        ...action,
+      }
     default:
       return state
   }
