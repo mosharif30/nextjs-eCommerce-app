@@ -5,12 +5,15 @@ const auth = (state = [], action) => {
     case actionTypes.LOGIN_STARTED:
       return {
         ...state,
-        ...action,
+        loading: action.loading,
+        logged: action.logged,
       }
     case actionTypes.LOGIN_SUCCESS:
       return {
         ...state,
-        ...action,
+        loading: action.loading,
+        logged: action.logged,
+        user: action.user,
       }
     case actionTypes.LOGIN_FAILED:
       return {
@@ -21,7 +24,8 @@ const auth = (state = [], action) => {
     case actionTypes.REGISTER_STARTED:
       return {
         ...state,
-        ...action,
+        loading: action.loading,
+        logged: action.logged,
       }
     case actionTypes.REGISTER_SUCCESS:
       return {

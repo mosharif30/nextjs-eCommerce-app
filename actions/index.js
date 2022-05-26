@@ -1,3 +1,4 @@
 import { LOGIN_ACTION, REGISTER_ACTION } from './auth'
+import { GET_LIST_BOOK_ACTION } from './book'
 
-export { LOGIN_ACTION, REGISTER_ACTION }
+export { LOGIN_ACTION, REGISTER_ACTION, GET_LIST_BOOK_ACTION }

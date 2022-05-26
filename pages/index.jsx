@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 // this comment tells babel to convert jsx to calls to a function called jsx instead of React.createElement
 /** @jsxImportSource @emotion/react */
@@ -18,10 +18,17 @@ import {
   H5,
   Small,
 } from '../components'
+import { GET_LIST_BOOK_ACTION } from '../actions'
+import { useDispatch, useSelector } from 'react-redux'
 
 export default function Home() {
   const theme = useTheme()
+  const dispatch = useDispatch()
+  const { loading, books } = useSelector((state) => state.book)
 
+  useEffect(() => {
+    dispatch(GET_LIST_BOOK_ACTION())
+  }, [])
   return (
     <Layout title="فروشگاه کتاب">
       <div>
@@ -47,67 +54,70 @@ export default function Home() {
             }
           `}
         >
-          {data.products.map((product) => (
-            <Link href={`/product/${product.slug}`}>
-              <a
-                css={css`
-                  margin-right: 2%;
-                  @media (max-width: 706px) {
-                    margin-top: 3%;
-                  }
-                `}
-                href={`/product/${product.slug}`}
-              >
-                {' '}
-                <div
+          {loading && <></>}
+          {!loading &&
+            books &&
+            books.map((product) => (
+              <Link href={`/product/${product.slug}`}>
+                <a
                   css={css`
-                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-                    transition: 0.3s;
-                    max-width: 250px;
-                    margin-top: 5px;
-                    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+                    margin-right: 2%;
+                    @media (max-width: 706px) {
+                      margin-top: 3%;
+                    }
                   `}
+                  href={`/product/${product.slug}`}
                 >
-                  <img
-                    css={css`
-                      max-width: 300px;
-                      max-height: 300px;
-                    `}
-                    src={product.image}
-                    alt=""
-                    srcSet=""
-                  />
+                  {' '}
                   <div
                     css={css`
-                      padding: 2px 16px;
+                      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                      transition: 0.3s;
+                      max-width: 250px;
+                      margin-top: 5px;
+                      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
                     `}
                   >
-                    {' '}
-                    <H5>{product.name}</H5>
-                    <Small
+                    <img
                       css={css`
-                        color: ${theme.colors.text};
+                        max-width: 300px;
+                        max-height: 300px;
+                      `}
+                      src={product.image}
+                      alt=""
+                      srcSet=""
+                    />
+                    <div
+                      css={css`
+                        padding: 2px 16px;
                       `}
                     >
-                      {product.author}
-                    </Small>
-                  </div>
+                      {' '}
+                      <H5>{product.name}</H5>
+                      <Small
+                        css={css`
+                          color: ${theme.colors.text};
+                        `}
+                      >
+                        {product.author}
+                      </Small>
+                    </div>
 
-                  <div
-                    css={css`
-                      width: 100%;
-                      padding: 10%;
-                      background-color: ${theme.colors.primary};
-                      display: flex;
-                      justify-content: center;
-                    `}
-                  >
-                    <H5>{product.price} هزارتومان</H5>
+                    <div
+                      css={css`
+                        width: 100%;
+                        padding: 10%;
+                        background-color: ${theme.colors.primary};
+                        display: flex;
+                        justify-content: center;
+                      `}
+                    >
+                      <H5>{product.price} هزارتومان</H5>
+                    </div>
                   </div>
-                </div>
-              </a>
-            </Link>
-          ))}
+                </a>
+              </Link>
+            ))}
         </div>
       </div>
     </Layout>

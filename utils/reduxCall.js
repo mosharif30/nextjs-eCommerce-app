@@ -13,7 +13,7 @@ const reduxCall = async (dispatch, { url, method, name }) => {
       type: actionTypes[`${name}_SUCCESS`],
       logged: true,
       loading: false,
-      ...response,
+      response,
     })
   } catch (e) {
     console.log('error', e)
