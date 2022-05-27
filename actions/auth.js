@@ -3,7 +3,7 @@ import reduxCall from '../utils/reduxCall'
 const LOGIN_ACTION = () => {
   return async (dispatch) => {
     return reduxCall(dispatch, {
-      url: 'http://127.0.0.1:5000/login.json',
+      url: 'https://book-api-mohammadreza.herokuapp.com/login',
       method: 'GET',
       name: 'LOGIN',
     })
@@ -13,10 +13,10 @@ const LOGIN_ACTION = () => {
 const REGISTER_ACTION = () => {
   return async (dispatch) => {
     return reduxCall(dispatch, {
-      url: 'http://127.0.0.1:5000/register.json',
+      url: 'https://book-api-mohammadreza.herokuapp.com/register',
       method: 'GET',
       name: 'REGISTER',
     })
   }
 }
-export { LOGIN_ACTION,REGISTER_ACTION }
+export { LOGIN_ACTION, REGISTER_ACTION }
