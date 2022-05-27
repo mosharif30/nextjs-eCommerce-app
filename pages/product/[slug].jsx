@@ -7,17 +7,17 @@ import { css } from '@emotion/react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Layout from '../../containers/Layout'
-import data from '../../utils/data'
 import { Button, H1, H3, H5, Space } from '../../components'
+import { GET_LIST_BOOK_ACTION } from '../../actions'
 
-export default function Home() {
+const ProductPage = ({ books }) => {
   const primary = '#2c3e50'
   const secondary = '#f39c12'
   const success = '#27ae60'
   const danger = '#c0392b'
   const router = useRouter()
   const { slug } = router.query
-  const product = data.products.find((a) => a.slug === slug)
+  const product = books.find((a) => a.slug === slug)
   if (!product) {
     return <div>not found</div>
   }
@@ -144,3 +144,12 @@ export default function Home() {
     </Layout>
   )
 }
+ProductPage.getInitialProps = async ({ reduxStore }) => {
+  await reduxStore.dispatch(GET_LIST_BOOK_ACTION())
+  const { book } = reduxStore.getState()
+  return {
+    books: book.books,
+  }
+}
+
+export default ProductPage

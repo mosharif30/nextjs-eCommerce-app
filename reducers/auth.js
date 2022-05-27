@@ -13,7 +13,7 @@ const auth = (state = [], action) => {
         ...state,
         loading: action.loading,
         logged: action.logged,
-        user: action.user,
+        user: action.response,
       }
     case actionTypes.LOGIN_FAILED:
       return {
