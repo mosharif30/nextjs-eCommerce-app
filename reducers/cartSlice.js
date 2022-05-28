@@ -1,4 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { toast } from 'react-toastify'
+//  localStorage.getItem('cartItems')
+//    ? JSON.parse(localStorage.getItem('cartItems'))
+//    : []
+
 const initialState = {
   cartItems: [],
   cartTotalQuantity: 0,
@@ -14,12 +19,20 @@ const cartSlice = createSlice({
       )
       if (itemIndex >= 0) {
         state.cartItems[itemIndex].cartQuantity += 1
+        toast.info(`کتاب ${action.payload.name}  زیاد شد `, {
+          position: 'bottom-center',
+        })
       } else {
         const tempProduct = { ...action.payload, cartQuantity: 1 }
         state.cartItems.push(tempProduct)
+        toast.success(`کتاب ${action.payload.name} اضافه شد `, {
+          position: 'bottom-center',
+        })
       }
+      localStorage.setItem('cartItems', JSON.stringify(state.cartItems))
     },
   },
 })
+
 export const { addToCart } = cartSlice.actions
 export default cartSlice.reducer
