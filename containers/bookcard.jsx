@@ -2,17 +2,23 @@
 /** @jsxImportSource @emotion/react */
 import { css, useTheme } from '@emotion/react'
 import Link from 'next/link'
-import { H5, Small } from '../components'
+import { useDispatch } from 'react-redux'
+import { Button, H5, Small } from '../components'
+import { addToCart } from '../reducers/cartSlice'
 const BookCart = ({ loading, books }) => {
   const theme = useTheme()
+  const dispatch = useDispatch()
 
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product))
+  }
   return (
     <>
       {loading && <></>}
       {!loading &&
         books &&
         books.map((product) => (
-          <Link key={product.slug} href={`/product/${product.slug}`}>
+          <Link key={product.id} href={`/product/${product.slug}`}>
             <a
               css={css`
                 margin-right: 2%;
@@ -68,6 +74,9 @@ const BookCart = ({ loading, books }) => {
                 >
                   <H5>{product.price} هزارتومان</H5>
                 </div>
+                <button onClick={() => handleAddToCart(product)}>
+                  اضافه به سبد خرید
+                </button>
               </div>
             </a>
           </Link>
