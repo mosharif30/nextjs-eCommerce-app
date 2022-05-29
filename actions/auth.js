@@ -3,7 +3,7 @@ import reduxCall from '../utils/reduxCall'
 const LOGIN_ACTION = () => {
   return async (dispatch) => {
     return reduxCall(dispatch, {
-      url: 'https://book-api-mohammadreza.herokuapp.com/login',
+      url: 'https://my-json-server.typicode.com/mosharif30/bookjson/login',
       method: 'GET',
       name: 'LOGIN',
     })
@@ -13,7 +13,7 @@ const LOGIN_ACTION = () => {
 const REGISTER_ACTION = () => {
   return async (dispatch) => {
     return reduxCall(dispatch, {
-      url: 'https://book-api-mohammadreza.herokuapp.com/register',
+      url: 'https://my-json-server.typicode.com/mosharif30/bookjson/register',
       method: 'GET',
       name: 'REGISTER',
     })

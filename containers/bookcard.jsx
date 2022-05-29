@@ -74,9 +74,17 @@ const BookCart = ({ loading, books }) => {
                 >
                   <H5>{product.price} هزارتومان</H5>
                 </div>
-                <button onClick={() => handleAddToCart(product)}>
-                  اضافه به سبد خرید
-                </button>
+                <Link href={'/cart'}>
+                  <a>
+                    <Button
+                      secondary
+                      textWhite
+                      onClick={() => handleAddToCart(product)}
+                    >
+                      اضافه به سبد خرید
+                    </Button>
+                  </a>
+                </Link>
               </div>
             </a>
           </Link>

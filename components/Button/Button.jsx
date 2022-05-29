@@ -10,10 +10,12 @@ function Button({
   sec,
   textWhite,
   loading,
+  onClick,
 }) {
   const theme = useTheme()
   return (
     <button
+      onClick={onClick}
       type={type}
       css={css`
         width: 100%;

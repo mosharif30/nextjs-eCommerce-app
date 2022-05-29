@@ -130,7 +130,7 @@ function Header() {
               }
             `}
           >
-            <Link href="/">سبد خرید</Link>
+            <Link href="/cart">سبد خرید</Link>
           </li>
           {(!auth || !auth.logged) && (
             <>
