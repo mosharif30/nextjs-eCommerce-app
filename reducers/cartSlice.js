@@ -36,8 +36,19 @@ const cartSlice = createSlice({
       }
       localStorage.setItem('cartItems', JSON.stringify(state.cartItems))
     },
+    removeFromCart(state, action) {
+      const nextCartitems = state.cartItems.filter(
+        (cartItem) => cartItem.id !== action.payload.id
+      )
+
+      localStorage.setItem('cartItems', JSON.stringify(nextCartitems))
+      state.cartItems = nextCartitems
+      toast.error(`کتاب ${action.payload.name} حذف شد `, {
+        position: 'bottom-center',
+      })
+    },
   },
 })
 
-export const { addToCart } = cartSlice.actions
+export const { addToCart, removeFromCart } = cartSlice.actions
 export default cartSlice.reducer

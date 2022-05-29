@@ -18,12 +18,16 @@ import {
   Small,
 } from '../components'
 import Layout from '../containers/Layout'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { castDraft, produceWithPatches } from 'immer'
+import { removeFromCart } from '../reducers/cartSlice'
 export default function Cart() {
   const cart = useSelector((state) => state.cart)
   const theme = useTheme()
-
+  const dispatch = useDispatch()
+  const handleRemoveFromCart = (cartItem) => {
+    dispatch(removeFromCart(cartItem))
+  }
   return (
     <>
       <Head>
@@ -128,7 +132,11 @@ export default function Cart() {
                       }
                     `}
                   >
-                    <Button danger textWhite>
+                    <Button
+                      onClick={() => handleRemoveFromCart(cartItem)}
+                      danger
+                      textWhite
+                    >
                       حذف
                     </Button>
                   </div>
