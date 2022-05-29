@@ -14,6 +14,7 @@ function Button({
   danger,
   bgWhite,
   nohover,
+  blue,
 }) {
   const theme = useTheme()
   return (
@@ -22,7 +23,9 @@ function Button({
       type={type}
       css={css`
         width: 100%;
-        background-color: ${bgWhite
+        background-color: ${blue
+          ? theme.colors.blue
+          : bgWhite
           ? theme.colors.simpleWhite
           : danger
           ? theme.colors.danger

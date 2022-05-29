@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react'
 import { css, useTheme } from '@emotion/react'
 import Head from 'next/head'
 import Link from 'next/link'
+
 import {
   Button,
   InputEmail,
@@ -19,14 +20,7 @@ import {
 } from '../components'
 import Layout from '../containers/Layout'
 import { useDispatch, useSelector } from 'react-redux'
-import { castDraft, produceWithPatches } from 'immer'
-import {
-  addToCart,
-  clearCart,
-  decreaseCart,
-  getTotals,
-  removeFromCart,
-} from '../reducers/cartSlice'
+import { getTotals } from '../reducers/cartSlice'
 export default function Cart() {
   const cart = useSelector((state) => state.cart)
   const theme = useTheme()
@@ -34,18 +28,6 @@ export default function Cart() {
   useEffect(() => {
     dispatch(getTotals())
   }, [cart, dispatch])
-  const handleRemoveFromCart = (cartItem) => {
-    dispatch(removeFromCart(cartItem))
-  }
-  const handledecreaseCart = (cartItem) => {
-    dispatch(decreaseCart(cartItem))
-  }
-  const handleAddToCart = (product) => {
-    dispatch(addToCart(product))
-  }
-  const handleClearCart = (product) => {
-    dispatch(clearCart())
-  }
 
   return (
     <>
@@ -55,7 +37,7 @@ export default function Cart() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout title="فروشگاه کتاب">
-        <H2>سبد خرید</H2>
+        <H2>اطلاعات مشتری </H2>
         {cart.cartItems.length == 0 ? (
           <div>سبد خرید خالیست</div>
         ) : (
@@ -63,7 +45,7 @@ export default function Cart() {
             <div
               css={css`
                 display: flex;
-                background-color: ${theme.colors.secondary};
+                background-color: ${theme.colors.blue};
                 color: ${theme.colors.white};
                 justify-content: space-between;
                 align-items: center;
@@ -82,6 +64,7 @@ export default function Cart() {
                 <H5>تصویر</H5>
               </div>
               <H5>نام</H5>
+
               <H5>قیمت</H5>
               <div
                 css={css`
@@ -149,15 +132,7 @@ export default function Cart() {
                         height: 60px;
                       }
                     `}
-                  >
-                    <Button
-                      onClick={() => handleRemoveFromCart(cartItem)}
-                      danger
-                      textWhite
-                    >
-                      حذف
-                    </Button>
-                  </div>
+                  ></div>
                 </div>
                 <H5>{cartItem.name}</H5>
 
@@ -174,9 +149,6 @@ export default function Cart() {
                     }
                   `}
                 >
-                  <Button onClick={() => handleAddToCart(cartItem)} bgWhite>
-                    +
-                  </Button>
                   <div
                     css={css`
                       margin-top: 25%;
@@ -186,13 +158,6 @@ export default function Cart() {
                   >
                     <H5>{cartItem.cartQuantity}</H5>
                   </div>
-                  <Button
-                    onClick={() => handledecreaseCart(cartItem)}
-                    bgWhite
-                    danger
-                  >
-                    -
-                  </Button>
                 </div>
                 <H5>{cartItem.price * cartItem.cartQuantity} تومان</H5>
               </div>
@@ -209,9 +174,11 @@ export default function Cart() {
               `}
             >
               <div>
-                <Button onClick={() => handleClearCart()} danger textWhite>
-                  پاک کردن سبد خرید
-                </Button>
+                <Link href={'/cart'}>
+                  <Button danger textWhite>
+                    اصلاح سبد خرید
+                  </Button>
+                </Link>
               </div>
               <div
                 css={css`
@@ -225,22 +192,49 @@ export default function Cart() {
               >
                 <div
                   css={css`
-                    display: flex;
                     padding: 5%;
                     justify-content: space-between;
                     @media (max-width: 1000px) {
                     }
                   `}
                 >
-                  <H5>مجموع:</H5>
-                  <H5> {cart.cartTotalAmount}</H5>
+                  <div
+                    css={css`
+                     display:flex;
+                     
+                      }
+                    `}
+                  >
+                    <H5>مجموع خرید: </H5>
+                    <H5> {cart.cartTotalAmount}</H5>
+                  </div>
+
+                  <div
+                    css={css`
+                     display:flex;
+                      }
+                    `}
+                  >
+                    <H5>مالیات :</H5>
+                    <H5> {cart.cartTotalAmount * 0.09}</H5>
+                  </div>
+                  <div
+                    css={css`
+                     display:flex;
+                      }
+                    `}
+                  >
+                    {' '}
+                    <H5>قابل پرداخت:</H5>
+                    <H5>
+                      {' '}
+                      {cart.cartTotalAmount + 0.09 * cart.cartTotalAmount}
+                    </H5>
+                  </div>
                 </div>
-                <Small>هزینه ارسال و مالیات در مرحله بعد محاسبه می شود</Small>
-                <Link href={'/checkout'}>
-                  <Button secondary textWhite>
-                    مرحله بعد
-                  </Button>
-                </Link>
+                <Button blue textWhite>
+                  پرداخت
+                </Button>
               </div>
             </div>
           </>

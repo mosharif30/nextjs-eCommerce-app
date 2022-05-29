@@ -9,6 +9,7 @@ const theme = {
     text: '#2c3e50',
     danger: '#e74c3c',
     pomegranate: '#c0392b',
+    blue: '#2980b9',
   },
   typography: {
     h1: { fontSize: 1.802, lineHeight: 1.3, fontWeight: 400 },
