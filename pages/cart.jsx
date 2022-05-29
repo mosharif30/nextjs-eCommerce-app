@@ -20,7 +20,12 @@ import {
 import Layout from '../containers/Layout'
 import { useDispatch, useSelector } from 'react-redux'
 import { castDraft, produceWithPatches } from 'immer'
-import { removeFromCart } from '../reducers/cartSlice'
+import {
+  addToCart,
+  clearCart,
+  decreaseCart,
+  removeFromCart,
+} from '../reducers/cartSlice'
 export default function Cart() {
   const cart = useSelector((state) => state.cart)
   const theme = useTheme()
@@ -28,6 +33,16 @@ export default function Cart() {
   const handleRemoveFromCart = (cartItem) => {
     dispatch(removeFromCart(cartItem))
   }
+  const handledecreaseCart = (cartItem) => {
+    dispatch(decreaseCart(cartItem))
+  }
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product))
+  }
+  const handleClearCart = (product) => {
+    dispatch(clearCart())
+  }
+
   return (
     <>
       <Head>
@@ -143,7 +158,7 @@ export default function Cart() {
                 </div>
                 <H5>{cartItem.name}</H5>
 
-                <H5>{cartItem.price}هزار تومان</H5>
+                <H5>{cartItem.price} تومان</H5>
                 <div
                   css={css`
                     display: flex;
@@ -156,7 +171,9 @@ export default function Cart() {
                     }
                   `}
                 >
-                  <Button bgWhite>+</Button>
+                  <Button onClick={() => handleAddToCart(cartItem)} bgWhite>
+                    +
+                  </Button>
                   <div
                     css={css`
                       margin-top: 25%;
@@ -166,11 +183,15 @@ export default function Cart() {
                   >
                     <H5>{cartItem.cartQuantity}</H5>
                   </div>
-                  <Button bgWhite danger>
+                  <Button
+                    onClick={() => handledecreaseCart(cartItem)}
+                    bgWhite
+                    danger
+                  >
                     -
                   </Button>
                 </div>
-                <H5>{cartItem.price * cartItem.cartQuantity}هزار تومان</H5>
+                <H5>{cartItem.price * cartItem.cartQuantity} تومان</H5>
               </div>
             ))}
             <div
@@ -178,12 +199,17 @@ export default function Cart() {
                 padding: 1%;
                 width: 70%;
                 margin: 0 auto;
-
+                display: flex;
                 @media (max-width: 1000px) {
                   width: 100%;
                 }
               `}
             >
+              <div>
+                <Button onClick={() => handleClearCart()} danger textWhite>
+                  پاک کردن سبد خرید
+                </Button>
+              </div>
               <div
                 css={css`
                   width: 40%;

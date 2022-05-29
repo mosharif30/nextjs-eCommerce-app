@@ -72,7 +72,7 @@ const BookCart = ({ loading, books }) => {
                     justify-content: center;
                   `}
                 >
-                  <H5>{product.price} هزارتومان</H5>
+                  <H5>{product.price} تومان</H5>
                 </div>
                 <Link href={'/cart'}>
                   <Button

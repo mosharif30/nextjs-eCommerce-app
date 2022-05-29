@@ -121,7 +121,7 @@ const ProductPage = ({ books }) => {
                 padding: 5% 10%;
               `}
             >
-              <H5>قیمت : {product.price} هزارتومان</H5>
+              <H5>قیمت : {product.price} تومان</H5>
             </div>
             {product.countInStock === 0 ? (
               <div

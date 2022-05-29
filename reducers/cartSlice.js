@@ -3,6 +3,7 @@ import { toast } from 'react-toastify'
 //  localStorage.getItem('cartItems')
 //    ? JSON.parse(localStorage.getItem('cartItems'))
 //    : []
+
 const ISSERVER = typeof window === 'undefined'
 if (!ISSERVER) {
   var cartItems = JSON.parse(localStorage.getItem('cartItems'))
@@ -47,8 +48,38 @@ const cartSlice = createSlice({
         position: 'bottom-center',
       })
     },
+    decreaseCart(state, action) {
+      const itemIndex = state.cartItems.findIndex(
+        (cartItem) => cartItem.id === action.payload.id
+      )
+      if (state.cartItems[itemIndex].cartQuantity > 1) {
+        state.cartItems[itemIndex].cartQuantity -= 1
+        toast.info(`کتاب ${action.payload.name}  کم شد `, {
+          position: 'bottom-center',
+        })
+        localStorage.setItem('cartItems', JSON.stringify(state.cartItems))
+      } else if (state.cartItems[itemIndex].cartQuantity === 1) {
+        const nextCartitems = state.cartItems.filter(
+          (cartItem) => cartItem.id !== action.payload.id
+        )
+
+        localStorage.setItem('cartItems', JSON.stringify(nextCartitems))
+        state.cartItems = nextCartitems
+        toast.error(`کتاب ${action.payload.name} حذف شد `, {
+          position: 'bottom-center',
+        })
+      }
+    },
+    clearCart(state, action) {
+      state.cartItems = []
+      toast.error('سبد خرید پاک شد', {
+        position: 'bottom-center',
+      })
+      localStorage.setItem('cartItems', JSON.stringify(state.cartItems))
+    },
   },
 })
 
-export const { addToCart, removeFromCart } = cartSlice.actions
+export const { addToCart, removeFromCart, decreaseCart, clearCart } =
+  cartSlice.actions
 export default cartSlice.reducer
