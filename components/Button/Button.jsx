@@ -13,6 +13,7 @@ function Button({
   onClick,
   danger,
   bgWhite,
+  nohover,
 }) {
   const theme = useTheme()
   return (
@@ -40,8 +41,10 @@ function Button({
         cursor: pointer;
         transition-duration: 0.4s;
         &:hover {
-          box-shadow: ${theme.boxShadow.light};
-          background-color: ${danger
+          box-shadow: ${nohover ? theme.colors.primary : theme.boxShadow.light};
+          background-color: ${nohover
+            ? theme.colors.primary
+            : danger
             ? theme.colors.pomegranate
             : theme.colors.secondary};
         }

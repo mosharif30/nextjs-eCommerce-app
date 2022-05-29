@@ -8,6 +8,7 @@ import { H1 } from '../components'
 import { GET_LIST_BOOK_ACTION } from '../actions'
 import BookCart from '../containers/bookcard'
 import book from '../reducers/book'
+import { getTotals } from '../reducers/cartSlice'
 
 const Home = ({ books, loading }) => {
   const theme = useTheme()
@@ -45,6 +46,7 @@ const Home = ({ books, loading }) => {
 }
 Home.getInitialProps = async ({ reduxStore }) => {
   await reduxStore.dispatch(GET_LIST_BOOK_ACTION())
+  await reduxStore.dispatch(getTotals())
   const { book } = reduxStore.getState()
   return {
     loading: book.loading,

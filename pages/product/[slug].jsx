@@ -43,9 +43,7 @@ const ProductPage = ({ books }) => {
             width: 100%;
           }
         `}
-      >
-        {' '}
-      </div>
+      ></div>
 
       <div
         css={css`
@@ -70,7 +68,6 @@ const ProductPage = ({ books }) => {
             }
           `}
         >
-          {' '}
           <Image
             src={`/${product.image}`}
             alt={product.name}
@@ -142,13 +139,16 @@ const ProductPage = ({ books }) => {
                 موجود
               </div>
             )}
-            <Button
-              onClick={() => handleAddToCart(product)}
-              disabled
-              type="button"
-            >
-              اضافه به سبد خرید
-            </Button>
+            <Link href={'/cart'}>
+              <Button
+                onClick={() => handleAddToCart(product)}
+                secondary
+                textWhite
+                type="button"
+              >
+                اضافه به سبد خرید
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 //this comment tells babel to convert jsx to calls to a function called jsx instead of React.createElement
 /** @jsxImportSource @emotion/react */
@@ -24,12 +24,16 @@ import {
   addToCart,
   clearCart,
   decreaseCart,
+  getTotals,
   removeFromCart,
 } from '../reducers/cartSlice'
 export default function Cart() {
   const cart = useSelector((state) => state.cart)
   const theme = useTheme()
   const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(getTotals())
+  }, [cart, dispatch])
   const handleRemoveFromCart = (cartItem) => {
     dispatch(removeFromCart(cartItem))
   }

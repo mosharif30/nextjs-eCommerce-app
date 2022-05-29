@@ -28,7 +28,6 @@ const BookCart = ({ loading, books }) => {
               `}
               href={`/product/${product.slug}`}
             >
-              {' '}
               <div
                 css={css`
                   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -52,7 +51,6 @@ const BookCart = ({ loading, books }) => {
                     padding: 2px 16px;
                   `}
                 >
-                  {' '}
                   <H5>{product.name}</H5>
                   <Small
                     css={css`
