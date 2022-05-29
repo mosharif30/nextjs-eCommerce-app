@@ -9,6 +9,8 @@ import Image from 'next/image'
 import Layout from '../../containers/Layout'
 import { Button, H1, H3, H5, Space } from '../../components'
 import { GET_LIST_BOOK_ACTION } from '../../actions'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../../reducers/cartSlice'
 
 const ProductPage = ({ books }) => {
   const primary = '#2c3e50'
@@ -20,6 +22,11 @@ const ProductPage = ({ books }) => {
   const product = books.find((a) => a.slug === slug)
   if (!product) {
     return <div>not found</div>
+  }
+  const dispatch = useDispatch()
+
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product))
   }
   return (
     <Layout title={product.name}>
@@ -135,7 +142,11 @@ const ProductPage = ({ books }) => {
                 موجود
               </div>
             )}
-            <Button disabled type="button">
+            <Button
+              onClick={() => handleAddToCart(product)}
+              disabled
+              type="button"
+            >
               اضافه به سبد خرید
             </Button>
           </div>

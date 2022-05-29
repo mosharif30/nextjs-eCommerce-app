@@ -4,8 +4,11 @@ const theme = {
     secondary: '#16a085',
     sec: '#1abc9c',
     dark: '#34495e',
+    simpleWhite: '	#FFFFFF',
     white: '#f5f6fa',
     text: '#2c3e50',
+    danger: '#e74c3c',
+    pomegranate: '#c0392b',
   },
   typography: {
     h1: { fontSize: 1.802, lineHeight: 1.3, fontWeight: 400 },

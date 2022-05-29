@@ -3,9 +3,14 @@ import { toast } from 'react-toastify'
 //  localStorage.getItem('cartItems')
 //    ? JSON.parse(localStorage.getItem('cartItems'))
 //    : []
-
+const ISSERVER = typeof window === 'undefined'
+if (!ISSERVER) {
+  var cartItems = JSON.parse(localStorage.getItem('cartItems'))
+} else {
+  var cartItems = []
+}
 const initialState = {
-  cartItems: [],
+  cartItems: cartItems ? cartItems : [],
   cartTotalQuantity: 0,
   cartTotalAmount: 0,
 }

@@ -11,6 +11,8 @@ function Button({
   textWhite,
   loading,
   onClick,
+  danger,
+  bgWhite,
 }) {
   const theme = useTheme()
   return (
@@ -19,7 +21,11 @@ function Button({
       type={type}
       css={css`
         width: 100%;
-        background-color: ${secondary
+        background-color: ${bgWhite
+          ? theme.colors.simpleWhite
+          : danger
+          ? theme.colors.danger
+          : secondary
           ? theme.colors.secondary
           : sec
           ? theme.colors.sec
@@ -35,7 +41,9 @@ function Button({
         transition-duration: 0.4s;
         &:hover {
           box-shadow: ${theme.boxShadow.light};
-          background-color: ${theme.colors.secondary};
+          background-color: ${danger
+            ? theme.colors.pomegranate
+            : theme.colors.secondary};
         }
       `}
     >
