@@ -1,11 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Link from 'next/link'
 /** @jsxImportSource @emotion/react */
 import { css, useTheme } from '@emotion/react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Button } from '../components'
+import { getTotals } from '../reducers/cartSlice'
 
 function Header() {
+  const dispatch = useDispatch()
+  const cart = useSelector((state) => state.cart)
+
+  useEffect(() => {
+    dispatch(getTotals())
+  }, [cart, dispatch])
   const auth = useSelector((state) => state.auth)
 
   const theme = useTheme()

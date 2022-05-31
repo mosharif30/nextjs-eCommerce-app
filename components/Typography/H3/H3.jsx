@@ -14,7 +14,7 @@ function H3({ children, align = 'right' }) {
         text-align: ${align};
         font-weight: ${theme.typography.h3.fontWeight};
         line-height: ${theme.typography.h3.lineHeight};
-        margin-top: 0;
+
         font-size: ${theme.typography.h3.fontSize}em;
       `}
     >

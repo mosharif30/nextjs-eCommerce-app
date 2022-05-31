@@ -20,13 +20,14 @@ function Input({ type = 'text', placeholder, onChange }) {
         border: ${theme.border[1]} solid ${theme.borderColor.light};
         background-color: ${theme.inputColor.light};
         margin: ${theme.spaces[0]};
-        outline: ${theme.spaces[0]};
+        outline: ${theme.spaces[1]};
         font-size: ${theme.typography.paragraph.fontSize};
         color: ${theme.colors.text};
         padding: ${theme.spaces[0]};
         height: ${theme.spaces[5]};
         &:focus {
-          border: ${theme.border[1]} solid ${theme.colors.primary};
+          border-bottom: ${theme.border[2]} solid ${theme.colors.sec};
+          background-color: ${theme.colors.white};
         }
       `}
     />
