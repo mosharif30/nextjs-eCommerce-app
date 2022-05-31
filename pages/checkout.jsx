@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react'
 import { css, useTheme } from '@emotion/react'
 import Head from 'next/head'
 import Link from 'next/link'
-
+import Router from 'next/router'
 import {
   Button,
   InputEmail,
@@ -38,8 +38,8 @@ export default function Cart() {
     if (event) {
       event.preventDefault()
     }
-    console.log(formValue)
     localStorage.setItem('adress', JSON.stringify(formValue))
+    Router.push('/payment')
   }
   return (
     <>
@@ -53,7 +53,37 @@ export default function Cart() {
         <Space />
         <Space />
         {cart.cartItems.length == 0 ? (
-          <div>سبد خرید خالیست</div>
+          <div
+            css={css`
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              margin: 0 auto;
+
+              @media (max-width: 1000px) {
+              }
+            `}
+          >
+            <div
+              css={css`
+                margin: 0 auto;
+              `}
+            >
+              سبد خرید خالیست
+            </div>
+            <div
+              css={css`
+                width: 50%;
+                margin: 0 auto;
+                margin-top: 5%;
+              `}
+            >
+              {' '}
+              <Link href="/">
+                <Button>صفحه اصلی</Button>
+              </Link>
+            </div>
+          </div>
         ) : (
           <>
             <LayoutCheckoutForm>
@@ -81,49 +111,53 @@ export default function Cart() {
                   <H3>استان</H3>
                   <FormControl>
                     <InputText
-                      onChange={(value) => handleOnChange('state', value)}
+                      onChange={(value) => handleOnChange('استان :', value)}
                       placeholder="استان"
                     />
                   </FormControl>
                   <H3>شهر</H3>
                   <FormControl>
                     <InputText
-                      onChange={(value) => handleOnChange('city', value)}
+                      onChange={(value) => handleOnChange('شهر :', value)}
                       placeholder="شهر "
                     />
                   </FormControl>
                   <H3>خیابان اصلی</H3>
                   <FormControl>
                     <InputText
-                      onChange={(value) => handleOnChange('street1', value)}
+                      onChange={(value) =>
+                        handleOnChange('خیابان اصلی :', value)
+                      }
                       placeholder="خیابان اصلی "
                     />
                   </FormControl>
                   <H3>خیابان فرعی</H3>
                   <FormControl>
                     <InputText
-                      onChange={(value) => handleOnChange('street2', value)}
+                      onChange={(value) =>
+                        handleOnChange('خیابان فرعی:', value)
+                      }
                       placeholder="خیابان فرعی "
                     />
                   </FormControl>
                   <H3>کوچه</H3>
                   <FormControl>
                     <InputText
-                      onChange={(value) => handleOnChange('alley', value)}
+                      onChange={(value) => handleOnChange('کوچه :', value)}
                       placeholder=" کوچه "
                     />
                   </FormControl>
                   <H3>پلاک</H3>
                   <FormControl>
                     <InputText
-                      onChange={(value) => handleOnChange('Plaque', value)}
+                      onChange={(value) => handleOnChange('پلاک :', value)}
                       placeholder=" پلاک "
                     />
                   </FormControl>
                   <H3>طبقه</H3>
                   <FormControl>
                     <InputText
-                      onChange={(value) => handleOnChange('Floor', value)}
+                      onChange={(value) => handleOnChange('طبقه :', value)}
                       placeholder=" طبقه "
                     />
                   </FormControl>
@@ -315,11 +349,9 @@ export default function Cart() {
                       </div>
                     </div>
                     <FormControl>
-                      <Link href="./payment">
-                        <Button blue textWhite type="submit">
-                          پرداخت
-                        </Button>
-                      </Link>
+                      <Button blue textWhite type="submit">
+                        پرداخت
+                      </Button>
                     </FormControl>
                   </div>
                 </div>
