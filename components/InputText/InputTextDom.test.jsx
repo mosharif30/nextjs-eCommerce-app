@@ -1,18 +1,18 @@
 /**
  * @jest-environment jsdom
  */
-import Input from './Input'
+import InputText from './InputText'
 import { ThemeProvider } from '@emotion/react'
 import theme from '../../configs/theme'
 import { render, fireEvent } from '@testing-library/react'
 
-describe('Input', () => {
-  test('render Input in dom with placeholder', () => {
+describe('InputText', () => {
+  test('render InputText in dom with placeholder', () => {
     const { getByPlaceholderText } = render(
       <ThemeProvider theme={theme}>
-        <Input placeholder={'sample place holder'}>
+        <InputText placeholder={'sample place holder'}>
           sample Input with placeholder
-        </Input>
+        </InputText>
       </ThemeProvider>
     )
     expect(getByPlaceholderText(/sample/)).toBeTruthy()
@@ -20,7 +20,7 @@ describe('Input', () => {
   const setup = () => {
     const utils = render(
       <ThemeProvider theme={theme}>
-        <Input onChange={jest.fn()} />
+        <InputText onChange={jest.fn()} />
       </ThemeProvider>
     )
     const input = utils.getByLabelText('input')
@@ -29,7 +29,7 @@ describe('Input', () => {
       ...utils,
     }
   }
-  test('It should keep value of input', () => {
+  test('It should keep value of inputText', () => {
     const { input } = setup()
     fireEvent.change(input, { target: { value: '23' } })
     expect(input.value).toBe('23')

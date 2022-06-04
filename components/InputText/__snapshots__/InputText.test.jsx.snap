@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputText render correctly 1`] = `
+Array [
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".css-1bj1kh0-InputText{width:100%;}",
+      }
+    }
+    data-emotion="css 1bj1kh0-InputText"
+  />,
+  <div
+    className="css-1bj1kh0-InputText"
+  >
+    <style
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": ".css-i3lbul-Input{width:100%;word-break:break-word;border:2px solid #ecf0f1;background-color:#ecf0f1;margin:0px;outline:2px;font-size:1em;color:#2c3e50;padding:0px;height:32px;}.css-i3lbul-Input:focus{border-bottom:4px solid #1abc9c;background-color:#f5f6fa;}",
+        }
+      }
+      data-emotion="css i3lbul-Input"
+    />
+    <input
+      aria-label="input"
+      className="css-i3lbul-Input"
+      onChange={[Function]}
+      type="text"
+    />
+  </div>,
+]
+`;
+
+exports[`InputText render correctly placeholder 1`] = `
+Array [
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".css-1bj1kh0-InputText{width:100%;}",
+      }
+    }
+    data-emotion="css 1bj1kh0-InputText"
+  />,
+  <div
+    className="css-1bj1kh0-InputText"
+  >
+    <style
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": ".css-i3lbul-Input{width:100%;word-break:break-word;border:2px solid #ecf0f1;background-color:#ecf0f1;margin:0px;outline:2px;font-size:1em;color:#2c3e50;padding:0px;height:32px;}.css-i3lbul-Input:focus{border-bottom:4px solid #1abc9c;background-color:#f5f6fa;}",
+        }
+      }
+      data-emotion="css i3lbul-Input"
+    />
+    <input
+      aria-label="input"
+      className="css-i3lbul-Input"
+      onChange={[Function]}
+      placeholder="sample placeholder"
+      type="text"
+    />
+  </div>,
+]
+`;

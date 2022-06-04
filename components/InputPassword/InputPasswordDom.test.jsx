@@ -1,18 +1,18 @@
 /**
  * @jest-environment jsdom
  */
-import Input from './Input'
+import InputPassword from './InputPassword'
 import { ThemeProvider } from '@emotion/react'
 import theme from '../../configs/theme'
 import { render, fireEvent } from '@testing-library/react'
 
-describe('Input', () => {
-  test('render Input in dom with placeholder', () => {
+describe('InputPassword', () => {
+  test('render InputPassword in dom with placeholder', () => {
     const { getByPlaceholderText } = render(
       <ThemeProvider theme={theme}>
-        <Input placeholder={'sample place holder'}>
+        <InputPassword placeholder={'sample place holder'}>
           sample Input with placeholder
-        </Input>
+        </InputPassword>
       </ThemeProvider>
     )
     expect(getByPlaceholderText(/sample/)).toBeTruthy()
@@ -20,7 +20,7 @@ describe('Input', () => {
   const setup = () => {
     const utils = render(
       <ThemeProvider theme={theme}>
-        <Input onChange={jest.fn()} />
+        <InputPassword onChange={jest.fn()} />
       </ThemeProvider>
     )
     const input = utils.getByLabelText('input')

@@ -11,7 +11,7 @@ function Input({ type = 'text', placeholder, onChange }) {
   }
   return (
     <input
-      aria-label="cost-input"
+      aria-label="input"
       onChange={handleOnChange}
       type={type}
       placeholder={placeholder}
