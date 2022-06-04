@@ -36,6 +36,7 @@ function Button({
           : theme.colors.primary};
         color: ${textWhite ? theme.colors.white : theme.colors.text};
         font-size: ${theme.typography.paragraph.fontSize};
+        font-family: 'Vazir';
         text-decoration: none;
         padding: ${theme.spaces[4]};
         border: ${theme.borderRadius[1]};
