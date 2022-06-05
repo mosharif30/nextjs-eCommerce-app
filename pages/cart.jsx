@@ -1,25 +1,11 @@
 import React, { useEffect, useState } from 'react'
-
-//this comment tells babel to convert jsx to calls to a function called jsx instead of React.createElement
 /** @jsxImportSource @emotion/react */
 import { css, useTheme } from '@emotion/react'
 import Head from 'next/head'
 import Link from 'next/link'
-import {
-  Button,
-  InputEmail,
-  InputPassword,
-  H1,
-  Space,
-  H2,
-  H3,
-  H4,
-  H5,
-  Small,
-} from '../components'
+import { Button, H2, H5, Small } from '../components'
 import Layout from '../containers/Layout'
 import { useDispatch, useSelector } from 'react-redux'
-import { castDraft, produceWithPatches } from 'immer'
 import {
   addToCart,
   clearCart,
@@ -27,6 +13,7 @@ import {
   getTotals,
   removeFromCart,
 } from '../reducers/cartSlice'
+import EmptyCart from '../containers/EmptyCart/EmptyCart'
 export default function Cart() {
   const cart = useSelector((state) => state.cart)
   const theme = useTheme()
@@ -57,37 +44,7 @@ export default function Cart() {
       <Layout title="فروشگاه کتاب">
         <H2>سبد خرید</H2>
         {cart.cartItems.length == 0 ? (
-          <div
-            css={css`
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              margin: 0 auto;
-
-              @media (max-width: 1000px) {
-              }
-            `}
-          >
-            <div
-              css={css`
-                margin: 0 auto;
-              `}
-            >
-              سبد خرید خالیست
-            </div>
-            <div
-              css={css`
-                width: 50%;
-                margin: 0 auto;
-                margin-top: 5%;
-              `}
-            >
-              {' '}
-              <Link href="/">
-                <Button>صفحه اصلی</Button>
-              </Link>
-            </div>
-          </div>
+          <EmptyCart />
         ) : (
           <>
             <div

@@ -2,7 +2,7 @@ import React from 'react'
 
 /** @jsxImportSource @emotion/react */
 import { css, useTheme } from '@emotion/react'
-import { Small } from '../components'
+import { Small } from '../../components'
 
 function Footer() {
   const theme = useTheme()

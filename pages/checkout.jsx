@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react'
-
-//this comment tells babel to convert jsx to calls to a function called jsx instead of React.createElement
 /** @jsxImportSource @emotion/react */
 import { css, useTheme } from '@emotion/react'
 import Head from 'next/head'
@@ -23,6 +21,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getTotals } from '../reducers/cartSlice'
 import LayoutCheckoutForm from '../containers/LayoutCheckoutForm/LayoutCheckoutForm'
 import FormControl from '../containers/FormControl/FormControl'
+import EmptyCart from '../containers/EmptyCart/EmptyCart'
 export default function Cart() {
   const cart = useSelector((state) => state.cart)
   const theme = useTheme()
@@ -53,37 +52,7 @@ export default function Cart() {
         <Space />
         <Space />
         {cart.cartItems.length == 0 ? (
-          <div
-            css={css`
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              margin: 0 auto;
-
-              @media (max-width: 1000px) {
-              }
-            `}
-          >
-            <div
-              css={css`
-                margin: 0 auto;
-              `}
-            >
-              سبد خرید خالیست
-            </div>
-            <div
-              css={css`
-                width: 50%;
-                margin: 0 auto;
-                margin-top: 5%;
-              `}
-            >
-              {' '}
-              <Link href="/">
-                <Button>صفحه اصلی</Button>
-              </Link>
-            </div>
-          </div>
+          <EmptyCart></EmptyCart>
         ) : (
           <>
             <LayoutCheckoutForm>

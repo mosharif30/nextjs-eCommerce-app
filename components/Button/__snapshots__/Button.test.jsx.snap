@@ -5,13 +5,13 @@ Array [
   <style
     dangerouslySetInnerHTML={
       Object {
-        "__html": ".css-1o20tv1-Button{width:100%;background-color:#ecf0f1;color:#2c3e50;font-size:1em;-webkit-text-decoration:none;text-decoration:none;padding:16px;border:2px;display:inline-block;position:relative;cursor:pointer;transition-duration:0.4s;}.css-1o20tv1-Button:hover{box-shadow:0 4px 16px rgba(0,1,31,0.2);background-color:#16a085;}",
+        "__html": ".css-17u56ix-Button{width:100%;background-color:#ecf0f1;color:#2c3e50;font-size:1em;font-family:'Vazir';-webkit-text-decoration:none;text-decoration:none;padding:16px;border:2px;display:inline-block;position:relative;cursor:pointer;transition-duration:0.4s;}.css-17u56ix-Button:hover{box-shadow:0 4px 16px rgba(0,1,31,0.2);background-color:#16a085;}",
       }
     }
-    data-emotion="css 1o20tv1-Button"
+    data-emotion="css 17u56ix-Button"
   />,
   <button
-    className="css-1o20tv1-Button"
+    className="css-17u56ix-Button"
     type="button"
   >
     sample Button
@@ -24,13 +24,13 @@ Array [
   <style
     dangerouslySetInnerHTML={
       Object {
-        "__html": ".css-1ge2ywf-Button{width:100%;background-color:#e74c3c;color:#2c3e50;font-size:1em;-webkit-text-decoration:none;text-decoration:none;padding:16px;border:2px;display:inline-block;position:relative;cursor:pointer;transition-duration:0.4s;}.css-1ge2ywf-Button:hover{box-shadow:0 4px 16px rgba(0,1,31,0.2);background-color:#c0392b;}",
+        "__html": ".css-g0hm74-Button{width:100%;background-color:#e74c3c;color:#2c3e50;font-size:1em;font-family:'Vazir';-webkit-text-decoration:none;text-decoration:none;padding:16px;border:2px;display:inline-block;position:relative;cursor:pointer;transition-duration:0.4s;}.css-g0hm74-Button:hover{box-shadow:0 4px 16px rgba(0,1,31,0.2);background-color:#c0392b;}",
       }
     }
-    data-emotion="css 1ge2ywf-Button"
+    data-emotion="css g0hm74-Button"
   />,
   <button
-    className="css-1ge2ywf-Button"
+    className="css-g0hm74-Button"
     type="button"
   >
     sample Button danger
@@ -43,13 +43,13 @@ Array [
   <style
     dangerouslySetInnerHTML={
       Object {
-        "__html": ".css-1o20tv1-Button{width:100%;background-color:#ecf0f1;color:#2c3e50;font-size:1em;-webkit-text-decoration:none;text-decoration:none;padding:16px;border:2px;display:inline-block;position:relative;cursor:pointer;transition-duration:0.4s;}.css-1o20tv1-Button:hover{box-shadow:0 4px 16px rgba(0,1,31,0.2);background-color:#16a085;}",
+        "__html": ".css-17u56ix-Button{width:100%;background-color:#ecf0f1;color:#2c3e50;font-size:1em;font-family:'Vazir';-webkit-text-decoration:none;text-decoration:none;padding:16px;border:2px;display:inline-block;position:relative;cursor:pointer;transition-duration:0.4s;}.css-17u56ix-Button:hover{box-shadow:0 4px 16px rgba(0,1,31,0.2);background-color:#16a085;}",
       }
     }
-    data-emotion="css 1o20tv1-Button"
+    data-emotion="css 17u56ix-Button"
   />,
   <button
-    className="css-1o20tv1-Button"
+    className="css-17u56ix-Button"
     type="button"
   >
     صبر کنید
@@ -62,13 +62,13 @@ Array [
   <style
     dangerouslySetInnerHTML={
       Object {
-        "__html": ".css-1d5avbz-Button{width:100%;background-color:#16a085;color:#2c3e50;font-size:1em;-webkit-text-decoration:none;text-decoration:none;padding:16px;border:2px;display:inline-block;position:relative;cursor:pointer;transition-duration:0.4s;}.css-1d5avbz-Button:hover{box-shadow:0 4px 16px rgba(0,1,31,0.2);background-color:#16a085;}",
+        "__html": ".css-r96a09-Button{width:100%;background-color:#16a085;color:#2c3e50;font-size:1em;font-family:'Vazir';-webkit-text-decoration:none;text-decoration:none;padding:16px;border:2px;display:inline-block;position:relative;cursor:pointer;transition-duration:0.4s;}.css-r96a09-Button:hover{box-shadow:0 4px 16px rgba(0,1,31,0.2);background-color:#16a085;}",
       }
     }
-    data-emotion="css 1d5avbz-Button"
+    data-emotion="css r96a09-Button"
   />,
   <button
-    className="css-1d5avbz-Button"
+    className="css-r96a09-Button"
     type="button"
   >
     sample Button secondary

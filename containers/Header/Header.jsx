@@ -3,8 +3,8 @@ import Link from 'next/link'
 /** @jsxImportSource @emotion/react */
 import { css, useTheme } from '@emotion/react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Button } from '../components'
-import { getTotals } from '../reducers/cartSlice'
+import { Button } from '../../components'
+import { getTotals } from '../../reducers/cartSlice'
 
 function Header() {
   const dispatch = useDispatch()

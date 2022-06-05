@@ -4,8 +4,8 @@ import React from 'react'
 import Head from 'next/head'
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import Header from './Header'
-import Footer from './Footer'
+import Header from './Header/Header'
+import Footer from './Footer/Footer'
 
 function Layout({ children, title }) {
   return (

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormControl render correctly 1`] = `
+Array [
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".css-1241p75-FormControl{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding:8px;}",
+      }
+    }
+    data-emotion="css 1241p75-FormControl"
+  />,
+  <div
+    className="css-1241p75-FormControl"
+  />,
+]
+`;

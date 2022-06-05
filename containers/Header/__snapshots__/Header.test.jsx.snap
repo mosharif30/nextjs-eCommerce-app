@@ -1,0 +1,218 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header render correctly 1`] = `
+<div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".css-14j6nrd-Header{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding:1%;background-color:#ecf0f1;}@media (max-width: 706px){.css-14j6nrd-Header{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}}",
+      }
+    }
+    data-emotion="css 14j6nrd-Header"
+  />
+  <div
+    className="css-14j6nrd-Header"
+  >
+    <style
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": ".css-1rljxef-Header{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;color:#2c3e50;width:25%;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;}@media (max-width: 706px){.css-1rljxef-Header{width:100%;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;}}",
+        }
+      }
+      data-emotion="css 1rljxef-Header"
+    />
+    <div
+      className="css-1rljxef-Header"
+    >
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-d59lwj-Header{width:120px;}",
+          }
+        }
+        data-emotion="css d59lwj-Header"
+      />
+      <img
+        alt="logo"
+        className="css-d59lwj-Header"
+        src="/nextl.png"
+      />
+       
+    </div>
+    <style
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": ".css-qae97p-Header{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;list-style-type:none;color:#2c3e50;width:40%;}@media (max-width: 706px){.css-qae97p-Header{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;margin-top:5%;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding-right:0;}}",
+        }
+      }
+      data-emotion="css qae97p-Header"
+    />
+    <ul
+      className="css-qae97p-Header"
+    >
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-j5tgcz-Header{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;}",
+          }
+        }
+        data-emotion="css j5tgcz-Header"
+      />
+      <li
+        className="css-j5tgcz-Header"
+      >
+        <a
+          href="/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          خانه
+        </a>
+      </li>
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-mg5t0m-Header{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-right:5%;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;}@media (max-width: 706px){.css-mg5t0m-Header{padding-right:0;}}",
+          }
+        }
+        data-emotion="css mg5t0m-Header"
+      />
+      <li
+        className="css-mg5t0m-Header"
+      >
+        <a
+          href="/about"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          درباره ما
+        </a>
+      </li>
+      <li
+        className="css-mg5t0m-Header"
+      >
+        <a
+          href="/contact"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          ارتباط با ما
+        </a>
+      </li>
+    </ul>
+    <style
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": ".css-13uuzsx-Header{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;list-style-type:none;color:#2c3e50;margin-right:auto;width:40%;}@media (max-width: 1082px){.css-13uuzsx-Header{padding:2px;}}@media (max-width: 706px){.css-13uuzsx-Header{-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;width:100%;}}",
+        }
+      }
+      data-emotion="css 13uuzsx-Header"
+    />
+    <ul
+      className="css-13uuzsx-Header"
+    >
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-1vencho-Header{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-right:5%;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-right:auto;margin-left:5%;}@media (max-width: 706px){.css-1vencho-Header{margin-right:0;padding-right:0;}}",
+          }
+        }
+        data-emotion="css 1vencho-Header"
+      />
+      <li
+        className="css-1vencho-Header"
+      >
+        <style
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": ".css-24zwvv-Button{width:100%;background-color:#ecf0f1;color:#2c3e50;font-size:1em;font-family:'Vazir';-webkit-text-decoration:none;text-decoration:none;padding:16px;border:2px;display:inline-block;position:relative;cursor:pointer;transition-duration:0.4s;}.css-24zwvv-Button:hover{box-shadow:#ecf0f1;background-color:#ecf0f1;}",
+            }
+          }
+          data-emotion="css 24zwvv-Button"
+        />
+        <button
+          className="css-24zwvv-Button"
+          onClick={[Function]}
+          type="button"
+        >
+          <style
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": ".css-x6egge-Header{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}",
+              }
+            }
+            data-emotion="css x6egge-Header"
+          />
+          <div
+            className="css-x6egge-Header"
+          >
+            <span>
+              <svg
+                height="30"
+                viewBox="0 0 24 24"
+                width="30"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 19.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5zm3.5-1.5c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm1.336-5l1.977-7h-16.813l2.938 7h11.898zm4.969-10l-3.432 12h-12.597l.839 2h13.239l3.474-12h1.929l.743-2h-4.195z"
+                />
+              </svg>
+            </span>
+            <style
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": ".css-65npxb-Header{background-color:#16a085;padding:20%;color:white;border-radius:100%;}",
+                }
+              }
+              data-emotion="css 65npxb-Header"
+            />
+            <span
+              className="css-65npxb-Header"
+            >
+              0
+            </span>
+          </div>
+        </button>
+      </li>
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-ur5efn-Header{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-right:5%;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-right:auto;margin-left:5%;}",
+          }
+        }
+        data-emotion="css ur5efn-Header"
+      />
+      <li
+        className="css-ur5efn-Header"
+      >
+        <a
+          href="/login"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          ورود
+        </a>
+      </li>
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-dv6tsd-Header{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-right:5%;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:5%;border-radius:5%;background-color:#34495e;color:white;}",
+          }
+        }
+        data-emotion="css dv6tsd-Header"
+      />
+      <li
+        className="css-dv6tsd-Header"
+      >
+        <a
+          href="/register"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          ثبت نام
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
