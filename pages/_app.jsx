@@ -3,11 +3,11 @@ import { ThemeProvider } from '@emotion/react'
 import '../styles/globals.css'
 import theme from '../configs/theme'
 import { Provider } from 'react-redux'
-import store from '../configs/store'
+import { store, persistedStore } from '../configs/store'
 import App from 'next/app'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-
+import { PersistGate } from 'redux-persist/integration/react'
 function MyApp({ Component, pageProps }) {
   const [showChild, setShowChild] = useState(false)
   useEffect(() => {
@@ -23,10 +23,12 @@ function MyApp({ Component, pageProps }) {
   } else {
     return (
       <Provider store={store}>
-        <ThemeProvider theme={theme}>
-          <ToastContainer />
-          <Component {...pageProps} />
-        </ThemeProvider>
+        <PersistGate loading={null} persistor={persistedStore}>
+          <ThemeProvider theme={theme}>
+            <ToastContainer />
+            <Component {...pageProps} />
+          </ThemeProvider>
+        </PersistGate>
       </Provider>
     )
   }
