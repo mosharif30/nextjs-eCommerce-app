@@ -23,6 +23,7 @@ const cartSlice = createSlice({
       if (itemIndex >= 0) {
         state.cartItems[itemIndex].cartQuantity += 1
         toast.info(`کتاب ${action.payload.name}  زیاد شد `, {
+          toastId: 'success2',
           position: 'bottom-center',
         })
       } else {
@@ -30,6 +31,7 @@ const cartSlice = createSlice({
         state.cartItems.push(tempProduct)
         toast.success(`کتاب ${action.payload.name} اضافه شد `, {
           position: 'bottom-center',
+          toastId: 'success1',
         })
       }
     },
@@ -40,6 +42,7 @@ const cartSlice = createSlice({
 
       state.cartItems = nextCartitems
       toast.error(`کتاب ${action.payload.name} حذف شد `, {
+        toastId: 'success3',
         position: 'bottom-center',
       })
     },
@@ -50,17 +53,17 @@ const cartSlice = createSlice({
       if (state.cartItems[itemIndex].cartQuantity > 1) {
         state.cartItems[itemIndex].cartQuantity -= 1
         toast.info(`کتاب ${action.payload.name}  کم شد `, {
+          toastId: 'success4',
           position: 'bottom-center',
         })
-        localStorage.setItem('cartItems', JSON.stringify(state.cartItems))
       } else if (state.cartItems[itemIndex].cartQuantity === 1) {
         const nextCartitems = state.cartItems.filter(
           (cartItem) => cartItem.id !== action.payload.id
         )
 
-        localStorage.setItem('cartItems', JSON.stringify(nextCartitems))
         state.cartItems = nextCartitems
         toast.error(`کتاب ${action.payload.name} حذف شد `, {
+          toastId: 'success5',
           position: 'bottom-center',
         })
       }
@@ -68,9 +71,9 @@ const cartSlice = createSlice({
     clearCart(state, action) {
       state.cartItems = []
       toast.error('سبد خرید پاک شد', {
+        toastId: 'success6',
         position: 'bottom-center',
       })
-      localStorage.setItem('cartItems', JSON.stringify(state.cartItems))
     },
     getTotals(state, action) {
       let { total, quantity } = state.cartItems.reduce(
