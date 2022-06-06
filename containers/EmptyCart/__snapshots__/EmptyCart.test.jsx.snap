@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmptyCart render correctly 1`] = `
+Array [
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".css-1uocg6f-EmptyCart{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;margin:0 auto;}",
+      }
+    }
+    data-emotion="css 1uocg6f-EmptyCart"
+  />,
+  <div
+    className="css-1uocg6f-EmptyCart"
+  >
+    <style
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": ".css-697z9k-EmptyCart{margin:0 auto;}",
+        }
+      }
+      data-emotion="css 697z9k-EmptyCart"
+    />
+    <div
+      className="css-697z9k-EmptyCart"
+    >
+      سبد خرید خالیست
+    </div>
+    <style
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": ".css-14vg6mh-EmptyCart{width:50%;margin:0 auto;margin-top:5%;}",
+        }
+      }
+      data-emotion="css 14vg6mh-EmptyCart"
+    />
+    <div
+      className="css-14vg6mh-EmptyCart"
+    >
+       
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-17u56ix-Button{width:100%;background-color:#ecf0f1;color:#2c3e50;font-size:1em;font-family:'Vazir';-webkit-text-decoration:none;text-decoration:none;padding:16px;border:2px;display:inline-block;position:relative;cursor:pointer;transition-duration:0.4s;}.css-17u56ix-Button:hover{box-shadow:0 4px 16px rgba(0,1,31,0.2);background-color:#16a085;}",
+          }
+        }
+        data-emotion="css 17u56ix-Button"
+      />
+      <button
+        className="css-17u56ix-Button"
+        onClick={[Function]}
+        type="button"
+      >
+        صفحه اصلی
+      </button>
+    </div>
+  </div>,
+]
+`;

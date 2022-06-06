@@ -1,3 +1,4 @@
+import { render } from '@testing-library/react'
 import mountWithTheme from '../../utils/mountWithTheme'
 import FormControl from './FormControl'
 describe('FormControl', () => {
