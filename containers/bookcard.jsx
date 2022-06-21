@@ -14,9 +14,9 @@ const BookCart = ({ loading, books }) => {
   }
   return (
     <>
-      {loading && <></>}
+      {loading && <>salam</>}
       {!loading &&
-        books &&
+        books != undefined &&
         books.map((product) => (
           <Link key={product.id} href={`/product/${product.slug}`}>
             <a
