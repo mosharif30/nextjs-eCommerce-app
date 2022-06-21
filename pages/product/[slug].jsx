@@ -28,6 +28,9 @@ const ProductPage = ({ books }) => {
   const handleAddToCart = (product) => {
     dispatch(addToCart(product))
   }
+  const myLoader = ({ src, width, quality }) => {
+    return `/${product.image}?w=${300}&q=${quality || 75}`
+  }
   return (
     <Layout title={product.name}>
       <Space />
@@ -69,6 +72,7 @@ const ProductPage = ({ books }) => {
           `}
         >
           <Image
+            loader={myLoader}
             src={`/${product.image}`}
             alt={product.name}
             width={250}
