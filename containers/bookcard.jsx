@@ -8,7 +8,7 @@ import { addToCart } from '../reducers/cartSlice'
 const BookCart = ({ loading, books }) => {
   const theme = useTheme()
   const dispatch = useDispatch()
-
+  console.log('books', books)
   const handleAddToCart = (product) => {
     dispatch(addToCart(product))
   }

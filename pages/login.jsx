@@ -25,6 +25,7 @@ import actionTypes from '../configs/actionTypes'
 import { LOGIN_ACTION } from '../actions'
 
 export default function Login() {
+  console.log('SALAM', `${process.env.NEXT_PUBLIC_ABSOLUTE_URL}/books`)
   const dispatch = useDispatch()
   const [formValue, setFormValue] = useState({})
   const auth = useSelector((state) => state.auth)
